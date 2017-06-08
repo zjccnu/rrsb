@@ -64,8 +64,6 @@ public class DBManager {
 	    int i = 0;
 	    String sql = "insert into sys_user_role (user_id,role_id) values(?,1)";
 	    PreparedStatement pstmt;
-	    
-	  
 	    try {
 	        pstmt = (PreparedStatement) conn.prepareStatement(sql);
 	        pstmt.setLong(1, empid);

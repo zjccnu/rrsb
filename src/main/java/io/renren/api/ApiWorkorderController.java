@@ -75,7 +75,6 @@ public class ApiWorkorderController {
     		ids[1]=4;
     		ids[2]=5;
     		map.put("constructionid",user.getEmpid());
-    		System.out.println("constructionid"+user.getEmpid());
     	}
      	map.put("ids", ids);
     	map.put("entid", user.getEmpent());
@@ -247,23 +246,26 @@ public class ApiWorkorderController {
     		ids[1]=1;
     		ids[2]=2;
     		ids[3]=3;
-    	 map.put("ids", ids);
-         map.put("entid", user.getEmpent());
-    	 result.put("fbz", workorderService.queryWorkorder(map).size());    
+    	Map<String,Object> map1 = new HashMap<String,Object>();
+    	 map1.put("ids", ids);
+         map1.put("entid", user.getEmpent());
+    	 result.put("fbz", workorderService.queryWorkorder(map1).size());    
     	   //执行中
     		ids=new long[2];
     		ids[0]=4;
     		ids[1]=5;
-    		map.put("ids", ids);
-            map.put("entid", user.getEmpent());
-       	 result.put("zxz", workorderService.queryWorkorder(map).size());
+    		Map<String,Object> map2 = new HashMap<String,Object>();
+    		map2.put("ids", ids);
+            map2.put("entid", user.getEmpent());
+       	 result.put("zxz", workorderService.queryWorkorder(map2).size());
     	//已完成
     	
     		ids=new long[1];
     		ids[0]=6;
-    		map.put("ids", ids);
-            map.put("entid", user.getEmpent());
-       	    result.put("ywc", workorderService.queryWorkorder(map).size());
+    		Map<String,Object> map3 = new HashMap<String,Object>();
+    		map3.put("ids", ids);
+            map3.put("entid", user.getEmpent());
+       	    result.put("ywc", workorderService.queryWorkorder(map3).size());
     	//我的发布
     		ids=new long[7];
     		ids[0]=0;
@@ -273,28 +275,32 @@ public class ApiWorkorderController {
     		ids[4]=4;
     		ids[5]=5;
     		ids[6]=6;
-    		map.put("orderemp",user.getEmpid());
-    		map.put("ids", ids);
-            map.put("entid", user.getEmpent());
-       	 result.put("wdfb", workorderService.queryWorkorder(map).size());
+    		Map<String,Object> map4 = new HashMap<String,Object>();
+    		map4.put("orderemp",user.getEmpid());
+    		map4.put("ids", ids);
+            map4.put("entid", user.getEmpent());
+       	 result.put("wdfb", workorderService.queryWorkorder(map4).size());
     	//我的配送
     
     		ids=new long[2];
     		ids[0]=1;
     		ids[1]=4;
-    		map.put("distributionid",user.getEmpid());
-    		map.put("ids", ids);
-            map.put("entid", user.getEmpent());
-       	 result.put("wdps", workorderService.queryWorkorder(map).size());
+    		Map<String,Object> map5 = new HashMap<String,Object>();
+    		map5.put("distributionid",user.getEmpid());
+    		map5.put("ids", ids);
+            map5.put("entid", user.getEmpent());
+       	 result.put("wdps", workorderService.queryWorkorder(map5).size());
     	//我的施工
+       	
     		ids=new long[3];
     		ids[0]=2;
     		ids[1]=4;
     		ids[2]=5;
-    		map.put("constructionid",user.getEmpid());
-    		map.put("ids", ids);
-    		map.put("entid", user.getEmpent());
-       	 result.put("wdsg", workorderService.queryWorkorder(map).size());
+    		Map<String,Object> map6 = new HashMap<String,Object>();
+    		map6.put("constructionid",user.getEmpid());
+    		map6.put("ids", ids);
+    		map6.put("entid", user.getEmpent());
+       	 result.put("wdsg", workorderService.queryWorkorder(map6).size());
     	return R.ok().put("data", result);
     }
     
