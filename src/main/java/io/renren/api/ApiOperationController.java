@@ -41,6 +41,7 @@ public class ApiOperationController {
 		operationEntity.setOperdesc(operDesc);
 		operationEntity.setOperemp(employeeEntity.getEmpid());
 		operationEntity.setOperorder(operOrder);
+		operationEntity.setBz1(employeeEntity.getEmpname());
 		SimpleDateFormat format=new SimpleDateFormat(" yyyy-MM-dd HH:mm:ss");
 		operationEntity.setOpertime(format.format(new Date()));
 		operationService.save(operationEntity);
